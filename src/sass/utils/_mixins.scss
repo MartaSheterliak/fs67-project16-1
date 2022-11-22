@@ -39,3 +39,19 @@
 @mixin calc($gap, $quantity) {
   width: calc((100% - ($gap * ($quantity - 1))) / $quantity);
 }
+
+@mixin font ($fw, $fs, $lh) {
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: calc($lh / $fs);
+}
+
+@mixin retina1 {
+
+  @media screen and (min-device-pixel-ratio: 2),
+  screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+    @content
+  }
+}
