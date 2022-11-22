@@ -1,0 +1,172 @@
+.container {
+    padding: 0;
+}
+
+.hero {
+    width: 320px;
+    height: 100vh;
+    text-align: center;
+    padding-top: 284px;
+    padding-left: 36px;
+
+    @media screen and (min-width: 480px) {
+        width: $mobile;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: $tablet;
+        text-align: left;
+        padding-top: 190px;
+        padding-left: 20px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: $desktop;
+        padding-top: 280px;
+        padding-left: 110px;
+    }
+}
+
+.background {
+    width: 100vw;
+    height: 100hw;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 60px 99px, 150px 186px, 88px 42px, cover;
+    transform: rotate(-29deg), rotate(28deg), rotate(24deg), 0;
+    background-position: 16px 162px, 140px 56px, 150px 394px, center;
+    background-image:
+        url('../images/main/mouse-1x.webp'),
+        url('../images/main/headphones-1x.webp'),
+        url('../images/main/pckeyboard-1x.webp'),
+        url('../images/main/hero-mob-1x.webp');
+
+    @include retina(main-hero, $mobile, webp) {
+        background-image: url('../images/#{main}/#{mouse-2x}.#{webp}'),
+        url('../images/#{main}/#{headphones-2x}.#{webp}'),
+        url('../images/#{main}/#{pckeyboard-2x}.#{webp}'),
+        url('../images/#{main}/#{hero-mob-2x}.#{webp}');
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 100vw;
+        height: 100hw;
+        background-size: 100px 165px, 180px 223px, 143px 69px, cover;
+        transform: rotate(-31.92deg), rotate(10.77deg), rotate(21.68deg), 0;
+        background-position: 68.87px 41px, 400px 195px, 421px 615px, center;
+        background-image:
+            url('../images/main/mouse-1x.webp'),
+            url('../images/main/headphones-1x.webp'),
+            url('../images/main/pckeyboard-1x.webp'),
+            url('../images/main/hero-tab-1x.webp');
+
+        @include retina(main-hero, $tablet, webp) {
+            background-image: url('../images/#{main}/#{mouse-2x}.#{webp}'),
+            url('../images/#{main}/#{headphones-2x}.#{webp}'),
+            url('../images/#{main}/#{pckeyboard-2x}.#{webp}'),
+            url('../images/#{main}/#{hero-tab-2x}.#{webp}');
+        }
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: $desktop;
+        // mix-blend-mode: luminosity;
+        // opacity: 0.25;
+        // filter: drop-shadow(0px 4px 25px #5EEC36);
+        background-size: 133px 220px, 270px 335px, 230px 111px, cover;
+        transform: rotate(-34deg), rotate(18deg), rotate(30deg), 0;
+        background-position: 589px 205px, 829px 300px, 578px 567px, center;
+        background-image:
+            // url('../images/main/Vector8-1x.webp'),
+            url('../images/main/mouse-1x.webp'),
+            url('../images/main/headphones-1x.webp'),
+            url('../images/main/pckeyboard-1x.webp'),
+            url('../images/main/hero-1x.webp');
+
+        @include retina(main-hero, $desktop, webp) {
+            background-image: url('../images/#{main}/#{mouse-2x}.#{webp}'),
+            url('../images/#{main}/#{headphones-2x}.#{webp}'),
+            url('../images/#{main}/#{pckeyboard-2x}.#{webp}'),
+            url('../images/#{main}/#{hero-2x}.#{webp}');
+        }
+    }
+}
+
+.title {
+    width: 270px;
+    height: 114px;
+    @include font (600, 32px, 38px);
+    color: $main-font-color;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (min-width: 768px) {
+        width: 399px;
+        height: 198px;
+        @include font (600, 56px, 60px);
+        margin-left: 20px;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width: 1280px) {
+        width: 515px;
+        height: 225px;
+        @include font (600, 64px, 75px);
+    }
+}
+
+.titile-one {
+    display: inline;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.titile-two {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+        display: inline;
+    }
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 173px;
+    height: 51px;
+    border-radius: 16px;
+    border: none;
+    background-color: $main-btn-color;
+
+    padding: 16px 0;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 102px;
+    @include font (700, 16px, 19px);
+    text-transform: uppercase;
+    color: $btn-text-color;
+
+    @media screen and (min-width: 768px) {
+        @include font (700, 18px, 21px);
+        width: 173px;
+        height: 51px;
+        margin-top: 64px;
+        margin-left: 20px;
+        margin-bottom: 128px;
+    }
+
+    @media screen and (min-width: 1280px) {
+        @include font (700, 28px, 30px);
+        width: 306px;
+        height: 70px;
+        margin-top: 40px;
+        margin-left: 50px;
+        margin-bottom: 209px;
+    }
+}
